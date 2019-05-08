@@ -1,0 +1,9 @@
+# Rule 1
+User-agent: Googlebot
+Disallow: /ParthHub-CMFiles/
+
+# Rule 2
+User-agent: *
+Allow: /
+
+Sitemap: http://www.parthhub.com/sitemap.xml

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#012b72">
+	<meta name="msapplication-navbutton-color" content="#012b72">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#012b72">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >
+	<script src="jquery-3.1.0.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="xyz.css">
+	<link rel="shortcut icon" href="/title.png" type="image/png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+
+
+
+
+</style>
+
+</head>
+<body style="background:#eee;">
+<div class="container " style="background: #fff;padding:0;">
+	<div class="signup__container xyzcss row col-lg-12" style="">
+		<div class="col-lg-5 col-sm-12 col-xs-12 mpzero">
+			<div class="container__child signup__thumbnail ">
+			  <div class="thumbnail__content text-center">
+				  <h1 class="heading--primary text" style="color:#555;font-size:70px;">Welcome to Cloud.</h1>
+				<h3 class="heading--secondary text" style="color:#555;">Are you ready to join us ?</h3><br/><br/><br/><br/><br/>
+				<h3 style="color:#555;" class="text">A safe place for all your files.<br></h3>
+			  </div>
+			  
+			</div>
+		</div>
+        
+        <div class="row col-lg-7 col-sm-12 col-xs-12" style="position:relative;margin:0;padding:0;min-height:0;">
+            <div class="col-lg-11 col-sm-11 col-xs-12 automar" style="padding:0;">
+                
+                    
+                        <div class="cont_info_log_sign_up col-lg-12 col-sm-12 col-xs-12 row" style="//background:violet;margin:0;padding:0;">
+                            <div class="col_md_login col-lg-6 col-sm-6 col-xs-12" style="">
+                                <div class="cont_ba_opcitiy">
+                                    <h2>LOGIN</h2>  
+                                    <p></p> 
+                                    <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+                                </div>
+                            </div>
+                            <div class="col_md_sign_up col-lg-6 col-sm-6 col-xs-12" style="">
+                                <div class="cont_ba_opcitiy">
+                                    <h2>SIGN UP</h2>
+                                    <p></p>
+                                    <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+                                </div>
+                            </div>
+                        </div>
+					
+                        <div class="cont_back_info col-lg-12 col-sm-12 col-xs-12 mpzero" style="background:#eee;">
+							<div class="cont_img_back_grey col-lg-12 col-sm-12 col-xs-12 mpzero" >
+							   <img src="bg7.jpg" alt="" />
+							</div>
+						</div>
+                        
+                        
+                        <div class="cont_forms col-lg-12 col-sm-12 col-xs-12 mpzero" >
+                            <!--<div class="cont_img_back_grey col-lg-12 col-sm-12 col-xs-12 mpzero">
+                               <img src="bg7.jpg" alt="" />
+                            </div>-->
+                            <div class="cont_form_login col-lg-6 col-sm-12 col-xs-12" style="">
+                                <a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
+                                <h2>LOGIN</h2>
+                                <input type="text" placeholder="Email" />
+                                <input type="password" placeholder="Password" />
+                                <button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+                            </div>
+							
+                            <form action="process.jsp" method="post">
+                            <div class="cont_form_sign_up col-lg-6 col-sm-12 col-xs-12" style="">
+                                    <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
+                                    <h2>SIGN UP</h2>
+                                    <input type="text" name="fname" placeholder="Full Name" />
+                                    <input type="text" name="uname" placeholder="Username" />
+                                    <input type="password" name="upass" placeholder="Password" />
+                                    <input type="password" name="ucpass" placeholder="Confirm Password" /><br/>
+                                    <input type="text" name="uemail" placeholder="Email" />
+                                    <input type="text" name="uphone" placeholder="Mobile Number" /><br/>
+                                    <br/><span style="font-weight:bold;align:center;padding-bottom:5px;">Security Question: What is your nick name?</span>
+                                    <input type="text" name="usecurity_ans" placeholder="Answer" />
+                                    <input type="text" name="uprivate_key" placeholder="Choose Private Key" />
+                                    <button class="btn_sign_up" onclick="cambiar_sign_up()">SIGN UP</button>
+                            </div>
+                            </form>
+                        </div>
+                    
+					<div class="cont_back_info nanohd col-xs-12 mpzero" style="background:#eee;">
+							<div class="cont_img_back_grey col-lg-12 col-sm-12 col-xs-12  mpzero" >
+							   <img src="bg7.jpg" alt="" />
+							</div>
+						</div>
+            </div>
+        </div>
+    
+	</div>
+</div>
+manish sharma
+</body>
+</html>
+
+<script>
+/* ------------------------------------ Click on login and Sign Up to  changue and view the effect
+---------------------------------------
+*/
+
+function cambiar_login() {
+  document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_login";  
+document.querySelector('.cont_form_login').style.display = "block";
+document.querySelector('.cont_form_sign_up').style.opacity = "0";               
+
+setTimeout(function(){  document.querySelector('.cont_form_login').style.opacity = "1"; },400);  
+  
+setTimeout(function(){    
+document.querySelector('.cont_form_sign_up').style.display = "none";
+},200);  
+  }
+
+function cambiar_sign_up(at) {
+  document.querySelector('.cont_forms').className = "cont_forms cont_forms_active_sign_up";
+  document.querySelector('.cont_form_sign_up').style.display = "block";
+document.querySelector('.cont_form_login').style.opacity = "0";
+  
+setTimeout(function(){  document.querySelector('.cont_form_sign_up').style.opacity = "1";
+},100);  
+
+setTimeout(function(){   document.querySelector('.cont_form_login').style.display = "none";
+},400);  
+
+
+}    
+
+
+
+function ocultar_login_sign_up() {
+
+document.querySelector('.cont_forms').className = "cont_forms col-lg-12 col-sm-12 col-xs-12 row mpzero";  
+
+document.querySelector('.cont_form_sign_up').style.opacity = "0";               
+document.querySelector('.cont_form_login').style.opacity = "0"; 
+
+setTimeout(function(){
+document.querySelector('.cont_form_sign_up').style.display = "none";
+document.querySelector('.cont_form_login').style.display = "none";
+},500);  
+  
+  }
+</script>

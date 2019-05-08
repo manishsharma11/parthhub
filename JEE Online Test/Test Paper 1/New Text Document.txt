@@ -1,0 +1,1432 @@
+<script type="text/javascript">
+var ans = [[],[],[],[],[],[],[],[],[],[],[],[],[]];
+var check = [0,0,0,0];
+function check_click(a,b)
+{
+	var z = "._".concat(a,"_qans");
+	if(ans[a-1][b-1]==b){
+		if(check[b-1]==0){
+			check[b-1]=1;
+			ans[a-1][4]=ans[a-1][4]-1;
+			if(ans[a-1][4]==0){
+				var x =  z.concat(" #right");
+				$(x).show();
+			}
+		}
+		else{
+			check[b-1]=0;
+			ans[a-1][4]=ans[a-1][4]+1;
+		}
+		
+	}
+	else{
+		var x = z.concat(" #wrong");
+		$(x).show();
+		ans[a-1][4]=0;
+	}
+	if(ans[a-1][4]==0){
+		check[0]=0;check[1]=0;check[2]=0;check[3]=0;
+		var x = "#_".concat(a,"_qans");
+		
+		var y = "input[name=que_".concat(a,"_ans]");
+		var n = x.concat(".ansview");
+		$(z).parent().find(".ansview").text("? View Answer");
+		
+		$(x).slideDown();
+		$(y).attr("disabled",true);
+	}
+	return false;
+}
+</script>
+<?php $x=1; ?>
+			<div class="decpart">
+				<div class="catA"><h3><u>Part C - Mathematics</u></h3></div>
+			</div>
+			
+				<table class="hd-table" cellspacing="0" cellpadding="0" border="0" width="100%" >
+				<tbody>
+				<tr>
+				<td class="advsect" style="text-align:justify;">
+					<div class="catA"><h5><b>SECTION I (Maximum Marks : 15)</b></h4></div>
+					<ul class="mkins">
+						<li>This section contains <b>FIVE</b> questions.</li>
+						<li>Each question has <b>FOUR</b> options (A), (B), (C) and (D). <b>ONLY ONE</b> of these four options is correct.</li>
+						
+					</ul>
+				</td>
+				</tr>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">1.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-A" value="A"  onclick="check_click(<?php echo $x;?>,1)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-A"></label>
+											</div>
+										</td>
+										<td class="td-opt" style="width:2%;">A.</td>
+										<td class="td-opt" style="width:96%;"></td>
+									</tr>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-B" value="B" onclick="check_click(<?php echo $x;?>,2)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-B"></label>
+											</div>
+										</td>
+										<td class="td-opt" >B.</td>
+										<td class="td-opt" ></td>
+
+									</tr>
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-C" value="C" onclick="check_click(<?php echo $x;?>,3)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-C"></label>
+											</div>
+										</td>
+										<td class="td-opt" >C.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr  class="tr-opt"> 
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-D" value="D" onclick="check_click(<?php echo $x;?>,4)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-D"></label>
+											</div>
+										</td>
+										<td class="td-opt" >D.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> A</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">2.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-A" value="A"  onclick="check_click(<?php echo $x;?>,1)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-A"></label>
+											</div>
+										</td>
+										<td class="td-opt" style="width:2%;">A.</td>
+										<td class="td-opt" style="width:96%;"></td>
+									</tr>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-B" value="B" onclick="check_click(<?php echo $x;?>,2)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-B"></label>
+											</div>
+										</td>
+										<td class="td-opt" >B.</td>
+										<td class="td-opt" ></td>
+
+									</tr>
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-C" value="C" onclick="check_click(<?php echo $x;?>,3)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-C"></label>
+											</div>
+										</td>
+										<td class="td-opt" >C.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr  class="tr-opt"> 
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-D" value="D" onclick="check_click(<?php echo $x;?>,4)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-D"></label>
+											</div>
+										</td>
+										<td class="td-opt" >D.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> A</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">3.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-A" value="A"  onclick="check_click(<?php echo $x;?>,1)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-A"></label>
+											</div>
+										</td>
+										<td class="td-opt" style="width:2%;">A.</td>
+										<td class="td-opt" style="width:96%;"></td>
+									</tr>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-B" value="B" onclick="check_click(<?php echo $x;?>,2)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-B"></label>
+											</div>
+										</td>
+										<td class="td-opt" >B.</td>
+										<td class="td-opt" ></td>
+
+									</tr>
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-C" value="C" onclick="check_click(<?php echo $x;?>,3)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-C"></label>
+											</div>
+										</td>
+										<td class="td-opt" >C.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr  class="tr-opt"> 
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-D" value="D" onclick="check_click(<?php echo $x;?>,4)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-D"></label>
+											</div>
+										</td>
+										<td class="td-opt" >D.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> A</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">4.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-A" value="A"  onclick="check_click(<?php echo $x;?>,1)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-A"></label>
+											</div>
+										</td>
+										<td class="td-opt" style="width:2%;">A.</td>
+										<td class="td-opt" style="width:96%;"></td>
+									</tr>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-B" value="B" onclick="check_click(<?php echo $x;?>,2)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-B"></label>
+											</div>
+										</td>
+										<td class="td-opt" >B.</td>
+										<td class="td-opt" ></td>
+
+									</tr>
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-C" value="C" onclick="check_click(<?php echo $x;?>,3)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-C"></label>
+											</div>
+										</td>
+										<td class="td-opt" >C.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr  class="tr-opt"> 
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-D" value="D" onclick="check_click(<?php echo $x;?>,4)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-D"></label>
+											</div>
+										</td>
+										<td class="td-opt" >D.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> A</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">5.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+								
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-A" value="A"  onclick="check_click(<?php echo $x;?>,1)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-A"></label>
+											</div>
+										</td>
+										<td class="td-opt" style="width:2%;">A.</td>
+										<td class="td-opt" style="width:96%;"></td>
+									</tr>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-B" value="B" onclick="check_click(<?php echo $x;?>,2)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-B"></label>
+											</div>
+										</td>
+										<td class="td-opt" >B.</td>
+										<td class="td-opt" ></td>
+
+									</tr>
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-C" value="C" onclick="check_click(<?php echo $x;?>,3)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-C"></label>
+											</div>
+										</td>
+										<td class="td-opt" >C.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr  class="tr-opt"> 
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="radio" name="que_<?php echo $x;?>_ans" id="que_<?php echo $x;?>_ans-D" value="D" onclick="check_click(<?php echo $x;?>,4)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-D"></label>
+											</div>
+										</td>
+										<td class="td-opt" >D.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> A</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<tr>
+				<td class="advsect">
+					<div class="catA"><h5><b>SECTION II (Maximum Marks : 32)</b></h4></div>
+					<ul class="mkins">
+						<li>This section contains <b> EIGHT </b> questions.</li>
+						<li>Each question has <b>FOUR</b> options (A), (B), (C) and (D). <b>ONE OR MORE THAN ONE </b> of these four options(s) is(are) correct.</li>
+						
+					</ul>
+				</td>
+				</tr>
+				
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">6.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[0]" id="que_<?php echo $x;?>_ans-A" value="A"  onclick="check_click(<?php echo $x;?>,1)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-A"></label>
+											</div>
+										</td>
+										<td class="td-opt" style="width:2%;">A.</td>
+										<td class="td-opt" style="width:96%;"></td>
+									</tr>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[1]" id="que_<?php echo $x;?>_ans-B" value="B" onclick="check_click(<?php echo $x;?>,2)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-B"></label>
+											</div>
+										</td>
+										<td class="td-opt" >B.</td>
+										<td class="td-opt" ></td>
+
+									</tr>
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[2]" id="que_<?php echo $x;?>_ans-C" value="C" onclick="check_click(<?php echo $x;?>,3)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-C"></label>
+											</div>
+										</td>
+										<td class="td-opt" >C.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr  class="tr-opt"> 
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[3]" id="que_<?php echo $x;?>_ans-D" value="D" onclick="check_click(<?php echo $x;?>,4)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-D"></label>
+											</div>
+										</td>
+										<td class="td-opt" >D.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> A</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">7.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[0]" id="que_<?php echo $x;?>_ans-A" value="A"  onclick="check_click(<?php echo $x;?>,1)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-A"></label>
+											</div>
+										</td>
+										<td class="td-opt" style="width:2%;">A.</td>
+										<td class="td-opt" style="width:96%;"></td>
+									</tr>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[1]" id="que_<?php echo $x;?>_ans-B" value="B" onclick="check_click(<?php echo $x;?>,2)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-B"></label>
+											</div>
+										</td>
+										<td class="td-opt" >B.</td>
+										<td class="td-opt" ></td>
+
+									</tr>
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[2]" id="que_<?php echo $x;?>_ans-C" value="C" onclick="check_click(<?php echo $x;?>,3)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-C"></label>
+											</div>
+										</td>
+										<td class="td-opt" >C.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr  class="tr-opt"> 
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[3]" id="que_<?php echo $x;?>_ans-D" value="D" onclick="check_click(<?php echo $x;?>,4)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-D"></label>
+											</div>
+										</td>
+										<td class="td-opt" >D.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> A</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">8.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+								
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style=""> 
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[0]" id="que_<?php echo $x;?>_ans-A" value="A"  onclick="check_click(<?php echo $x;?>,1)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-A"></label>
+											</div>
+										</td>
+										<td class="td-opt" style="width:2%;">A.</td>
+										<td class="td-opt" style="width:96%;"></td>
+									</tr>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[1]" id="que_<?php echo $x;?>_ans-B" value="B" onclick="check_click(<?php echo $x;?>,2)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-B"></label>
+											</div>
+										</td>
+										<td class="td-opt" >B.</td>
+										<td class="td-opt" ></td>
+
+									</tr>
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[2]" id="que_<?php echo $x;?>_ans-C" value="C" onclick="check_click(<?php echo $x;?>,3)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-C"></label>
+											</div>
+										</td>
+										<td class="td-opt" >C.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr  class="tr-opt"> 
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[3]" id="que_<?php echo $x;?>_ans-D" value="D" onclick="check_click(<?php echo $x;?>,4)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-D"></label>
+											</div>
+										</td>
+										<td class="td-opt" >D.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> A</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">9.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[0]" id="que_<?php echo $x;?>_ans-A" value="A"  onclick="check_click(<?php echo $x;?>,1)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-A"></label>
+											</div>
+										</td>
+										<td class="td-opt" style="width:2%;">A.</td>
+										<td class="td-opt" style="width:96%;">
+										
+										</td>
+									</tr>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[1]" id="que_<?php echo $x;?>_ans-B" value="B" onclick="check_click(<?php echo $x;?>,2)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-B"></label>
+											</div>
+										</td>
+										<td class="td-opt" >B.</td>
+										<td class="td-opt" >
+										
+										</td>
+
+									</tr>
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[2]" id="que_<?php echo $x;?>_ans-C" value="C" onclick="check_click(<?php echo $x;?>,3)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-C"></label>
+											</div>
+										</td>
+										<td class="td-opt" >C.</td>
+										<td class="td-opt" >
+										
+										</td>
+									</tr>
+									<tr  class="tr-opt"> 
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[3]" id="que_<?php echo $x;?>_ans-D" value="D" onclick="check_click(<?php echo $x;?>,4)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-D"></label>
+											</div>
+										</td>
+										<td class="td-opt" >D.</td>
+										<td class="td-opt" >
+										
+										</td>
+									</tr>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> A</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">10.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[0]" id="que_<?php echo $x;?>_ans-A" value="A"  onclick="check_click(<?php echo $x;?>,1)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-A"></label>
+											</div>
+										</td>
+										<td class="td-opt" style="width:2%;">A.</td>
+										<td class="td-opt" style="width:96%;"></td>
+									</tr>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[1]" id="que_<?php echo $x;?>_ans-B" value="B" onclick="check_click(<?php echo $x;?>,2)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-B"></label>
+											</div>
+										</td>
+										<td class="td-opt" >B.</td>
+										<td class="td-opt" ></td>
+
+									</tr>
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[2]" id="que_<?php echo $x;?>_ans-C" value="C" onclick="check_click(<?php echo $x;?>,3)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-C"></label>
+											</div>
+										</td>
+										<td class="td-opt" >C.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr  class="tr-opt"> 
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[3]" id="que_<?php echo $x;?>_ans-D" value="D" onclick="check_click(<?php echo $x;?>,4)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-D"></label>
+											</div>
+										</td>
+										<td class="td-opt" >D.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> A</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">11.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[0]" id="que_<?php echo $x;?>_ans-A" value="A"  onclick="check_click(<?php echo $x;?>,1)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-A"></label>
+											</div>
+										</td>
+										<td class="td-opt" style="width:2%;">A.</td>
+										<td class="td-opt" style="width:96%;"></td>
+									</tr>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[1]" id="que_<?php echo $x;?>_ans-B" value="B" onclick="check_click(<?php echo $x;?>,2)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-B"></label>
+											</div>
+										</td>
+										<td class="td-opt" >B.</td>
+										<td class="td-opt" ></td>
+
+									</tr>
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[2]" id="que_<?php echo $x;?>_ans-C" value="C" onclick="check_click(<?php echo $x;?>,3)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-C"></label>
+											</div>
+										</td>
+										<td class="td-opt" >C.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr  class="tr-opt"> 
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[3]" id="que_<?php echo $x;?>_ans-D" value="D" onclick="check_click(<?php echo $x;?>,4)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-D"></label>
+											</div>
+										</td>
+										<td class="td-opt" >D.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> A</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">12.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[0]" id="que_<?php echo $x;?>_ans-A" value="A"  onclick="check_click(<?php echo $x;?>,1)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-A"></label>
+											</div>
+										</td>
+										<td class="td-opt" style="width:2%;">A.</td>
+										<td class="td-opt" style="width:96%;"></td>
+									</tr>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[1]" id="que_<?php echo $x;?>_ans-B" value="B" onclick="check_click(<?php echo $x;?>,2)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-B"></label>
+											</div>
+										</td>
+										<td class="td-opt" >B.</td>
+										<td class="td-opt" ></td>
+
+									</tr>
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[2]" id="que_<?php echo $x;?>_ans-C" value="C" onclick="check_click(<?php echo $x;?>,3)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-C"></label>
+											</div>
+										</td>
+										<td class="td-opt" >C.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr  class="tr-opt"> 
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[3]" id="que_<?php echo $x;?>_ans-D" value="D" onclick="check_click(<?php echo $x;?>,4)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-D"></label>
+											</div>
+										</td>
+										<td class="td-opt" >D.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> A</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">13.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[0]" id="que_<?php echo $x;?>_ans-A" value="A"  onclick="check_click(<?php echo $x;?>,1)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-A"></label>
+											</div>
+										</td>
+										<td class="td-opt" style="width:2%;">A.</td>
+										<td class="td-opt" style="width:96%;"></td>
+									</tr>
+									
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[1]" id="que_<?php echo $x;?>_ans-B" value="B" onclick="check_click(<?php echo $x;?>,2)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-B"></label>
+											</div>
+										</td>
+										<td class="td-opt" >B.</td>
+										<td class="td-opt" ></td>
+
+									</tr>
+									<tr  class="tr-opt">
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[2]" id="que_<?php echo $x;?>_ans-C" value="C" onclick="check_click(<?php echo $x;?>,3)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-C"></label>
+											</div>
+										</td>
+										<td class="td-opt" >C.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr  class="tr-opt"> 
+										<td class="td-opt-radio" style="width:2%;">
+											<div class="styled-input-single">
+												<input type="checkbox" name="que_<?php echo $x;?>_ans[3]" id="que_<?php echo $x;?>_ans-D" value="D" onclick="check_click(<?php echo $x;?>,4)" class="opt_rd_butt" id="radio_opt"/>
+												<label for="que_<?php echo $x;?>_ans-D"></label>
+											</div>
+										</td>
+										<td class="td-opt" >D.</td>
+										<td class="td-opt" ></td>
+									</tr>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> A</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<tr>
+				<td class="advsect">
+					<div class="catA"><h5><b>SECTION III (Maximum Marks : 15)</b></h4></div>
+					<ul class="mkins">
+						<li>This section contains <b>FIVE</b> questions.</li>
+						<li>The answer to each question is a <b>SINGLE DIGIT INTEGER</b> ranging from 0 to 9, both inclusive. </li>
+						
+					</ul>
+				</td>
+				</tr>
+				
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">14.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> ()</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">15.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> ()</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">16.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> ()</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">17.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> ()</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				<?php  $x++;?>
+				<tr >
+				<td style="padding:5px;">
+					<table class="tbl-container" cellspacing="0" cellpadding="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td class="td-qno" rowspan="2" valign="top" align="left" style="width:5%;">18.&nbsp;</td>
+							<td class="td-qtxt" valign="top">
+								<p>
+									
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td class="td-qopt" valign="top" style="">
+								<table class="tbl-opt" id="tblOption_434" border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tbody>
+									
+									<tr class="tr-opt">
+										<td class="td-opt-ans" colspan=3>
+											<div style="float:left;"><span class="ansview" onclick="$('#_<?php echo $x;?>_qans').slideToggle()">+ View Answer</span></div>
+											<div class="_<?php echo $x;?>_qans"><span class="rw-span" id="wrong">Wrong</span><span class="rw-span" id="right">Correct</span></div>
+											<div class="td-ans">
+												<div class="ansexp" id="_<?php echo $x;?>_qans">
+													<div><span class="ansvalue">Answer :</span><span> ()</span></div>
+													<div style="margin-top:20px;">
+														<div class="expterm" ><span class="expvalue">Explanation :</span></div>
+														<div class="explanation">
+															<span></span><br/>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+					</table>
+				</td>
+				</tr>
+				
+				</tbody>
+				</table>
+				<div class="prenext" style="padding:10px 0;">
+					<span style="float:left"><a href="paper.php?page=chemistry"><< Previous </a></span>
+				</div>
