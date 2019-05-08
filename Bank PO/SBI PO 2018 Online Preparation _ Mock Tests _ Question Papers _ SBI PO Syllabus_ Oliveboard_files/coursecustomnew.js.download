@@ -1,0 +1,347 @@
+String.prototype.trim = function() { 
+        return this.replace(/^\s+|\s+$/g,""); 
+}
+
+/* *************************************** */
+// One page navigation 
+/* *************************************** */
+
+$('.nav').onePageNav({
+    currentClass: 'active',
+    changeHash: true,
+    scrollSpeed: 1000,
+    scrollThreshold: 0.1,
+    easing: 'swing'
+});
+
+/* nice scroll */
+$("html").niceScroll({
+    cursorcolor:"#555",
+    cursoropacitymin:0.2,
+    cursoropacitymax:0.3,
+    cursorwidth:10,
+    cursorborder:"0px",
+    cursorborderradius:"0px",
+    cursorminheight:50,
+    zindex:100000,
+    mousescrollstep:40
+});
+
+
+/* **************************************************** */
+/* Hide navigation menu in reponsiveness after clicking */
+/* **************************************************** */  
+$(function(){ 
+    
+    var $navMain = $(".navbar-collapse");
+
+        if($(window).width() <= 767){
+            $('.navbar-toggle').on("click",function(){
+                if($navMain.hasClass("in")){
+                   $('.sidebar-open-bg').hide(); 
+                }else{
+                    $('.sidebar-open-bg').show();
+                }
+            });
+            $('.sidebar-open-bg').on('click', function(){
+                $navMain.collapse('hide');
+                $('.sidebar-open-bg').hide();
+            });
+            
+            $navMain.on("click", "a", null, function () {
+                if((!$(this).hasClass("dd-menu")) && (!$(this).hasClass("dropdown-toggle")))
+                    $navMain.collapse('hide');
+                $('.sidebar-open-bg').hide();
+            });
+            $navMain.on("click", ".dropdown-menu > li > a", null, function (){
+                if((!$(this).hasClass("dd-menu")) && (!$(this).hasClass("dropdown-toggle")))
+                    $navMain.collapse('hide');
+                $('.sidebar-open-bg').hide();
+            });
+        }
+
+    $(window).resize(function(){
+        if($(window).width() <= 767){
+            $('.navbar-toggle').on("click",function(){
+                if($navMain.hasClass("in")){
+                   $('.sidebar-open-bg').hide(); 
+                }else{
+                    $('.sidebar-open-bg').show();
+                }
+            });
+            $('.sidebar-open-bg').on('click', function(){
+                $navMain.collapse('hide');
+                $('.sidebar-open-bg').hide();
+            });
+            
+            $navMain.on("click", "a", null, function () {
+                if((!$(this).hasClass("dd-menu")) && (!$(this).hasClass("dropdown-toggle")))
+                    $navMain.collapse('hide');
+                $('.sidebar-open-bg').hide();
+            });
+            $navMain.on("click", ".dropdown-menu > li > a", null, function (){
+                if((!$(this).hasClass("dd-menu")) && (!$(this).hasClass("dropdown-toggle")))
+                    $navMain.collapse('hide');
+                $('.sidebar-open-bg').hide();
+            });
+        }
+    });
+});
+
+/* scroll to top */
+$(".totop").hide();
+
+$(function(){
+    $(window).scroll(function(){
+        if ($(this).scrollTop()>300)
+        {
+            $('.totop').fadeIn();
+        } 
+        else
+        {
+            $('.totop').fadeOut();
+        }
+    });
+    $('.totop a').click(function (e) {
+        e.preventDefault();
+        $('body,html').animate({scrollTop: 0}, 500);
+    });
+ });
+ 
+
+ function getCmatScore(email)
+    {
+    var rollnum=$('#rnumber').val();
+    if(rollnum=='')
+    {
+    $('#rollMsg p').html('Please Enter a roll number');
+    }
+    else
+    {
+
+        var params = {};
+        params['roll']  = rollnum;
+        params['email']  = email;
+        var url = '/pyscripts/getcmatscore.py';
+        $('#lrnumber').html('Please Wait..');
+        $.post(url,params, function(data) {
+            $('#cmatsc-data').show();
+            $('#cmatsc-data').html(data);
+            $('#rollMsg').hide();
+            $('html').getNiceScroll().resize();
+            $('#lrnumber').html('Submit');
+        });
+    }
+    }
+
+function toggleForgotPass()
+        {
+                $('#signup').hide();
+                $('.forgotpass-wrap').show();
+                $('.forgotpass-wrap .resetemail').show();
+                $('.forgotpass-wrap form').show();
+                $('.forgotpass-wrap .resetpass').hide();
+                location.href="#forgotpass";
+        }
+
+    function resetPassword()
+    {
+
+        var email = $("#remail").val();
+        if(email!='')
+        {
+            var filter = /^((\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*?)\s*;?\s*)+/;
+            if(!filter.test(email))
+            {
+                $('.rerrMsg p').html('Enter Valid Email Address');
+            }
+            else
+            {
+
+
+                var url  = "/pyscripts/forgotpass.py";
+                var params = {};
+                params['email'] = email;
+                $('#lreset').html('Please Wait...');
+                $.post(url,params, function(data) {
+                    if(data.trim() == '0')
+                    {
+                        $('.rerrMsg p').html('Email ID not registered.');
+                        $('#lreset').html('Submit');
+                    }
+                    else
+                    { 
+                        $('.resetemail').hide();
+                        $('.resetform').hide();
+                        $('.forgotpass-wrap .resetpass').show();
+                    }
+                });
+
+
+
+
+            }
+        }
+        else
+        {
+            $('.rerrMsg p').html('Please Enter your email');
+        }
+    }
+
+    function updatepassword(email,e)
+    {
+        var newpass =$('#updatepass').val();
+        if(newpass == '')
+        {
+            $('#updMsg p').html('Please Enter a Password');
+        }
+        else
+        {
+
+            var params = {};
+            params['newpass']  = newpass;
+            params['email']  = email;
+            params['auth']  = e;
+            var url = '/pyscripts/updatepassword.py';
+            $('#updatesubmit').html('Please Wait..');
+            $.post(url,params, function(data) {
+                if(data.trim() == '0')
+                {
+                    $('#updMsg p').html('Invalid Passowrd/auth code.');
+                    $('#updatesubmit').html('Submit');
+                }
+                else
+                {
+                    $('#upassform').hide();
+                    $('#updMsg p').html('Password Reset Successfully.');
+                }
+            });
+       }
+    }
+
+     function signToggler(carg)
+        {
+            if(carg==1)
+            {
+                $('#sign-in-tog').css('display','none');
+                $('#sign-up-tog').css('display','block');
+                $('.signup-cont').css('display','none');
+                $('.signin-cont').css('display','block');
+            }
+            else
+            {
+                $('#sign-up-tog').css('display','none');
+                $('#sign-in-tog').css('display','block');
+                $('.signin-cont').css('display','none');
+                $('.signup-cont').css('display','block');
+        
+            }
+    location.href="#home";
+        }
+
+
+    function gq(p) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0;i<vars.length;i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == p) {
+                return decodeURIComponent(pair[1]);
+            }
+        } 
+        return "0";
+    }
+
+        function courseInValidation(courseurl)
+        {
+            var email = $("#course-email").val();
+            var pwd = $("#course-password").val();
+            
+            if(email!='' && pwd!='') {
+                var filter = /^((\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*?)\s*;?\s*)+/;
+                if(!filter.test(email)){
+                    $('.courseIn').html('Enter Valid Email Address');
+                     }
+                 else {
+                        /* */
+                        var url = '/pyscripts/clogin.py';
+                        var params = {};
+                        params['lemail'] = email;
+                        params['lpwd'] = pwd;
+                        $('#coursein').html('Please Wait');
+                        $.post(url,params, function(data) {    
+                            if(data.trim() == '0') {
+                                $('.courseIn').html('Invalid email or password');
+                                $('#coursein').html('LOGIN');
+                            }
+                            else
+                            {
+                                    var next = gq('next');
+                                    if (next == "0")
+                                        window.location = courseurl;
+                                    else
+                                        window.location = next;
+                            }
+                        });
+                }
+            }
+            else
+            {
+                $('.courseIn').html('Fields cannot be empty');  
+            }
+        }
+
+
+        function courseUpValidation(ref,course,courseurl)
+        {
+            var email = $("#course-uemail").val();
+            var pwd = $("#course-upassword").val();
+            var mob = $('#course-uphone').val();
+
+            if(email!='' && pwd!='' && mob!='') {
+                var filter = /^((\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*?)\s*;?\s*)+/;
+                if(!filter.test(email)){
+                    $('.courseUp').html('Enter Valid Email Address');
+                     }
+                 else {
+
+                        var mfilter = /^\d{10}$/; 
+                        if (!mfilter.test(mob))
+                        {
+                            $('.courseUp').html('Enter Valid phone number');
+                        }
+                        else
+                        {
+                            $('#courseup').html('Please Wait');
+                            var url  = "/pyscripts/courseregister.py";
+                            var params = {};
+                            params['e'] = email;
+                            params['p'] = pwd;
+                            params['m'] = mob;
+                            params['r'] = ref;
+                            params['c'] = course;
+                            $.post(url,params, function(data) {       
+                                if(data.trim() == '0')
+                                {
+                                    $('#courseup').html('REGISTER');
+                                    $('.courseUp').html('Email already registered');
+                                }
+                                else
+                                {
+                                    var next = gq('next');
+                                    if (next == "0")
+                                        window.location = courseurl;
+                                    else
+                                        window.location = next;
+                                }
+                            });
+                        }
+
+                }
+            }
+            else
+            {
+                $('.courseUp').html('Fields cannot be empty');
+            }
+        }
+function goto(url){ window.location = url; }
